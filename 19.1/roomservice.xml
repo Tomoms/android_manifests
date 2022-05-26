@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <!-- mata repos -->
+  <project name="Tomoms/android_device_essential_mata" path="device/essential/mata" remote="github" revision="s" clone-depth="1000000000" />
+  <project name="LineageOS/android_kernel_essential_msm8998" path="kernel/essential/msm8998" remote="github" />
+  <project name="TheMuppets/proprietary_vendor_essential" path="vendor/essential" remote="github" />
+
+  <!-- Common repos -->
+  <remove-project name="LineageOS/android_frameworks_base" />
+  <project name="Tomoms/android_frameworks_base" path="frameworks/base" remote="github" revision="s" groups="pdk-cw-fs,pdk-fs" clone-depth="1000000000" />
+
+  <remove-project name="LineageOS/android_packages_modules_Permission" />
+  <project name="Tomoms/android_packages_modules_Permission" path="packages/modules/Permission" remote="github" revision="s" groups="pdk-cw-fs,pdk-fs" clone-depth="1000000000" />
+
+  <remove-project name="platform/art" />
+  <project path="art" name="Tomoms/android_art" groups="pdk" remote="github" revision="s" clone-depth="10000000000" />
+
+  <remove-project name="LineageOS/android_build" />
+  <project path="build/make" name="Tomoms/android_build" groups="pdk" revision="s" clone-depth="10000000000" >
+    <copyfile src="core/root.mk" dest="Makefile" />
+    <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+    <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+    <linkfile src="core" dest="build/core" />
+    <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+    <linkfile src="target" dest="build/target" />
+    <linkfile src="tools" dest="build/tools" />
+  </project>
+
+  <remove-project name="LineageOS/android_build_soong" />
+  <project path="build/soong" name="Tomoms/android_build_soong" remote="github" revision="s" clone-depth="1000000000" groups="pdk,tradefed" >
+    <linkfile src="root.bp" dest="Android.bp" />
+    <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
+  </project>
+
+  <remove-project name="LineageOS/android_frameworks_native" />
+  <project path="frameworks/native" name="Tomoms/android_frameworks_native" remote="github" revision="s" groups="pdk" clone-depth="10000000000" />
+
+  <!-- Unneeded projects taken from AdrianDC's manifests -->
+  <!-- Google AOSP - Unneeded Projects -->
+  <remove-project name="device/common" />
+  <remove-project name="device/generic/arm64" />
+  <remove-project name="device/generic/armv7-a-neon" />
+  <remove-project name="device/generic/goldfish" />
+  <remove-project name="device/generic/mini-emulator-arm64" />
+  <remove-project name="device/generic/mini-emulator-armv7-a-neon" />
+  <remove-project name="device/generic/mini-emulator-x86" />
+  <remove-project name="device/generic/mini-emulator-x86_64" />
+  <remove-project name="device/generic/qemu" />
+  <remove-project name="device/generic/x86" />
+  <remove-project name="device/generic/x86_64" />
+  <remove-project name="device/google/contexthub" />
+  <remove-project name="device/sample" />
+  <remove-project name="platform/external/autotest" />
+  <remove-project name="platform/external/linux-kselftest" />
+  <remove-project name="platform/prebuilts/android-emulator" />
+  <remove-project name="platform/prebuilts/gcc/darwin-x86/host/i686-apple-darwin-4.2.1" />
+  <remove-project name="platform/prebuilts/gdb/darwin-x86" />
+  <remove-project name="platform/prebuilts/go/darwin-x86" />
+  <remove-project name="platform/prebuilts/python/darwin-x86/2.7.5" />
+  <remove-project name="platform/prebuilts/qemu-kernel" />
+  <!-- LineageOS - AOSP - Unneeded Projects -->
+  <remove-project name="LineageOS/android_device_generic_common" />
+  <!-- LineageOS - Infrastructure - Unneeded Projects -->
+  <remove-project name="LineageOS/ansible" />
+  <remove-project name="LineageOS/contributors-cloud-generator" />
+  <remove-project name="LineageOS/cm_crowdin" />
+  <remove-project name="LineageOS/cve_tracker" />
+  <remove-project name="LineageOS/hudson" />
+  <remove-project name="LineageOS/mirror" />
+  <remove-project name="LineageOS/scripts" />
+  <remove-project name="LineageOS/www" />
+  <remove-project name="LineageOS/lineage_wiki" />
+
+  <!-- Other unneeded projects -->
+  <remove-project name="platform/prebuilts/bazel/darwin-x86_64" />
+  <remove-project name="platform/prebuilts/clang/host/darwin-x86" />
+  <remove-project name="LineageOS/android_prebuilts_gcc_darwin-x86_aarch64_aarch64-linux-android-4.9" />
+  <remove-project name="LineageOS/android_prebuilts_gcc_darwin-x86_arm_arm-linux-androideabi-4.9" />
+  <remove-project name="LineageOS/android_prebuilts_gcc_darwin-x86_x86_x86_64-linux-android-4.9" />
+  <remove-project name="kernel/prebuilts/4.19/arm64" />
+  <remove-project name="kernel/prebuilts/5.4/arm64" />
+  <remove-project name="kernel/prebuilts/5.4/x86-64" />
+  <!-- Build fails without this!
+    remove-project name="kernel/prebuilts/5.10/arm64" /-->
+  <remove-project name="kernel/prebuilts/5.10/x86-64" />
+  <remove-project name="kernel/prebuilts/mainline/arm64" />
+  <remove-project name="kernel/prebuilts/common-modules/virtual-device/4.19/arm64" />
+  <remove-project name="kernel/prebuilts/common-modules/virtual-device/4.19/x86-64" />
+  <!-- Build fails without this!
+    remove-project name="kernel/prebuilts/common-modules/virtual-device/5.10/arm64" /-->
+  <remove-project name="kernel/prebuilts/common-modules/virtual-device/5.10/x86-64" />
+  <remove-project name="kernel/prebuilts/common-modules/virtual-device/5.4/arm64" />
+  <remove-project name="kernel/prebuilts/common-modules/virtual-device/5.4/x86-64" />
+  <remove-project name="kernel/prebuilts/common-modules/virtual-device/mainline/arm64" />
+  <remove-project name="kernel/prebuilts/common-modules/virtual-device/mainline/x86-64" />
+
+</manifest>
