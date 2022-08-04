@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
 
+  <remote  name="gitlab"
+           fetch="https://www.gitlab.com" />
+
   <!-- mata repos -->
   <project name="Tomoms/android_device_essential_mata" path="device/essential/mata" remote="github" revision="s" clone-depth="1000000000" />
-  <project name="LineageOS/android_kernel_essential_msm8998" path="kernel/essential/msm8998" remote="github" />
+  <project name="Tomoms/android_kernel_essential_msm8998" path="kernel/essential/msm8998" remote="github" revision="s" />
   <project name="TheMuppets/proprietary_vendor_essential" path="vendor/essential" remote="github" />
+  <!--project name="ElectroPerf/atom-x-clang" path="prebuilts/clang/host/atomx" remote="gitlab" revision="atom-15" clone-dpeth="1" /-->
 
   <!-- Common repos -->
   <remove-project name="LineageOS/android_frameworks_base" />
@@ -35,6 +39,33 @@
 
   <remove-project name="LineageOS/android_frameworks_native" />
   <project path="frameworks/native" name="Tomoms/android_frameworks_native" remote="github" revision="s" groups="pdk" clone-depth="10000000000" />
+
+  <remove-project name="LineageOS/android_packages_apps_Settings" />
+  <project path="packages/apps/Settings" name="Tomoms/android_packages_apps_Settings" groups="pdk-fs" revision="s" clone-depth="10000000000" />
+
+  <remove-project name="LineageOS/android_packages_modules_Connectivity" />
+  <project path="packages/modules/Connectivity" name="Tomoms/android_packages_modules_Connectivity" clone-depth="10000000000" revision="s" groups="pdk-cw-fs,pdk-fs" />
+
+  <remove-project name="LineageOS/android_packages_providers_DownloadProvider" />
+  <project path="packages/providers/DownloadProvider" name="Tomoms/android_packages_providers_DownloadProvider" clone-depth="10000000000" revision="s" groups="pdk-cw-fs,pdk-fs" />
+
+  <remove-project name="platform/libcore" />
+  <project path="libcore" name="Tomoms/android_libcore" groups="pdk" revision="s" clone-depth="100000000" />
+
+  <remove-project name="LineageOS/android_packages_modules_Wifi" />
+  <project path="packages/modules/Wifi" name="Tomoms/android_packages_modules_Wifi" groups="pdk-cw-fs,pdk-fs" revision="s" clone-depth="10000000000" />
+
+  <remove-project name="LineageOS/android_system_core" />
+  <project path="system/core" name="Tomoms/android_system_core" groups="pdk" revision="s" clone-depth="1000000000" />
+
+  <remove-project name="platform/external/sqlite" />
+  <project path="external/sqlite" name="Tomoms/android_external_sqlite" groups="pdk" remote="github" revision="s" clone-depth="1000000000" />
+
+  <project name="ProtonAOSP/android_packages_apps_GmsCompat" path="packages/apps/GmsCompat" remote="github" revision="sc-v2" />
+  <remove-project name="ProtonAOSP/android_packages_apps_GmsCompat" />
+
+  <remove-project path="external/arm-optimized-routines" name="platform/external/arm-optimized-routines" groups="pdk" remote="aosp" />
+  <project path="external/arm-optimized-routines" name="Tomoms/android_external_arm-optimized-routines" groups="pdk" remote="github" clone-depth="1000000000" revision="s" />
 
   <!-- Unneeded projects taken from AdrianDC's manifests -->
   <!-- Google AOSP - Unneeded Projects -->
@@ -72,7 +103,7 @@
   <remove-project name="LineageOS/www" />
   <remove-project name="LineageOS/lineage_wiki" />
 
-  <!-- Other unneeded projects -->
+  <!-- Other unneeded projects detected by me -->
   <remove-project name="platform/prebuilts/bazel/darwin-x86_64" />
   <remove-project name="platform/prebuilts/clang/host/darwin-x86" />
   <remove-project name="LineageOS/android_prebuilts_gcc_darwin-x86_aarch64_aarch64-linux-android-4.9" />
@@ -81,14 +112,12 @@
   <remove-project name="kernel/prebuilts/4.19/arm64" />
   <remove-project name="kernel/prebuilts/5.4/arm64" />
   <remove-project name="kernel/prebuilts/5.4/x86-64" />
-  <!-- Build fails without this!
-    remove-project name="kernel/prebuilts/5.10/arm64" /-->
+  <!--remove-project name="kernel/prebuilts/5.10/arm64" /-->
   <remove-project name="kernel/prebuilts/5.10/x86-64" />
   <remove-project name="kernel/prebuilts/mainline/arm64" />
   <remove-project name="kernel/prebuilts/common-modules/virtual-device/4.19/arm64" />
   <remove-project name="kernel/prebuilts/common-modules/virtual-device/4.19/x86-64" />
-  <!-- Build fails without this!
-    remove-project name="kernel/prebuilts/common-modules/virtual-device/5.10/arm64" /-->
+  <!-- build fails without this remove-project name="kernel/prebuilts/common-modules/virtual-device/5.10/arm64" /-->
   <remove-project name="kernel/prebuilts/common-modules/virtual-device/5.10/x86-64" />
   <remove-project name="kernel/prebuilts/common-modules/virtual-device/5.4/arm64" />
   <remove-project name="kernel/prebuilts/common-modules/virtual-device/5.4/x86-64" />
