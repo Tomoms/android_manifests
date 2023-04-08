@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <remote name="gitlab" fetch="https://gitlab.com/" />
+
+  <!-- BEGIN mata-specific repos -->
+  <project name="Tomoms/android_device_essential_mata" path="device/essential/mata" remote="github" revision="t" />
+  <project name="LineageOS/android_hardware_sony_timekeep" path="hardware/sony/timekeep" remote="github" revision="lineage-20" />
+  <project name="Tomoms/android_kernel_essential_msm8998" path="kernel/essential/msm8998" remote="github" revision="t" clone-depth="1" />
+  <project name="Tomoms/proprietary_vendor_essential_mata" path="vendor/essential/mata" remote="github" revision="lineage-20" />
+  <!-- END mata-specific repos -->
+
+  <!-- BEGIN my forks -->
+  <remove-project name="LineageOS/android_vendor_lineage" />
+  <project name="Tomoms/android_vendor_lineage" path="vendor/lineage" remote="github" revision="t" />
+
+  <remove-project name="LineageOS/android_frameworks_base" />
+  <project name="Tomoms/android_frameworks_base" path="frameworks/base" remote="github" revision="t" />
+
+  <remove-project name="platform/art" />
+  <project name="Tomoms/android_art" path="art" remote="github" revision="t" />
+
+  <remove-project name="LineageOS/android_packages_modules_Permission" />
+  <project name="Tomoms/android_packages_modules_Permission" path="packages/modules/Permission" remote="github" revision="t" />
+
+  <remove-project name="LineageOS/android_packages_modules_Connectivity" />
+  <project name="Tomoms/android_packages_modules_Connectivity" path="packages/modules/Connectivity" remote="github" revision="t" />
+
+  <remove-project name="LineageOS/android_frameworks_native" />
+  <project name="Tomoms/android_frameworks_native" path="frameworks/native" remote="github" revision="t" />
+
+  <remove-project name="platform/frameworks/libs/modules-utils" />
+  <project name="Tomoms/android_frameworks_libs_modules-utils" path="frameworks/libs/modules-utils" remote="github" revision="t" />
+
+  <remove-project name="LineageOS/android_libcore" />
+  <project name="Tomoms/android_libcore" path="libcore" remote="github" revision="t" />
+
+  <remove-project name="LineageOS/android_bionic" />
+  <project name="Tomoms/android_bionic" path="bionic" remote="github" revision="t" />
+
+  <remove-project name="LineageOS/android_packages_apps_Settings" />
+  <project name="Tomoms/android_packages_apps_Settings-t" path="packages/apps/Settings" remote="github" revision="t" />
+
+  <remove-project name="LineageOS/android_packages_apps_SettingsIntelligence" />
+  <project name="Tomoms/android_packages_apps_SettingsIntelligence" path="packages/apps/SettingsIntelligence" remote="github" revision="t" />
+
+  <remove-project name="LineageOS/android_system_core" />
+  <project name="Tomoms/android_system_core" path="system/core" remote="github" revision="t" />
+
+  <remove-project name="LineageOS/android_packages_providers_DownloadProvider" />
+  <project name="Tomoms/android_packages_providers_DownloadProvider" path="packages/providers/DownloadProvider" remote="github" revision="t" />
+
+  <remove-project name="LineageOS/android_packages_providers_MediaProvider" />
+  <project name="Tomoms/android_packages_providers_MediaProvider" path="packages/providers/MediaProvider" remote="github" revision="t" />
+
+  <remove-project name="LineageOS/android_packages_modules_Wifi" />
+  <project name="Tomoms/android_packages_modules_Wifi" path="packages/modules/Wifi" remote="github" revision="t" />
+
+  <remove-project name="LineageOS/android_packages_apps_Updater" />
+  <project name="Tomoms/android_packages_apps_Updater" path="packages/apps/Updater" remote="github" revision="t" />
+
+  <remove-project name="LineageOS/android_build" />
+  <project path="build/make" name="Tomoms/android_build" groups="pdk" revision="t" >
+    <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+    <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+    <linkfile src="core" dest="build/core" />
+    <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+    <linkfile src="target" dest="build/target" />
+    <linkfile src="tools" dest="build/tools" />
+  </project>
+
+  <remove-project name="LineageOS/android_build_soong" />
+  <project path="build/soong" name="Tomoms/android_build_soong" groups="pdk,tradefed" revision="t" >
+    <linkfile src="root.bp" dest="Android.bp" />
+    <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
+  </project>
+
+  <remove-project name="platform/external/sqlite" />
+  <project path="external/sqlite" name="Tomoms/android_external_sqlite" groups="pdk" remote="github" revision="t" />
+
+  <remove-project name="LineageOS/android_bootable_recovery" />
+  <project path="bootable/recovery" name="Tomoms/android_bootable_recovery" groups="pdk" remote="github" revision="t" />
+
+  <remove-project name="platform/external/rust/crates/ring" />
+  <project path="external/rust/crates/ring" name="Tomoms/android_external_rust_crates_ring" groups="pdk" remote="github" revision="t" />
+
+  <remove-project name="LineageOS/android_system_logging" />
+  <project path="system/logging" name="Tomoms/android_system_logging" groups="pdk" remote="github" revision="t" />
+
+  <remove-project name="platform/external/rust/cxx" />
+  <project path="external/rust/cxx" name="Tomoms/android_external_rust_cxx" groups="pdk" remote="github" revision="t" />
+
+  <remove-project name="LineageOS/android_frameworks_av" />
+  <project path="frameworks/av" name="Tomoms/android_frameworks_av" groups="pdk" remote="github" revision="t" />
+
+  <remove-project name="platform/system/netd" />
+  <project path="system/netd" name="Tomoms/android_system_netd" groups="pdk" remote="github" revision="t" />
+
+  <remove-project name="LineageOS/android_system_apex" />
+  <project path="system/apex" name="Tomoms/android_system_apex" groups="pdk" remote="github" revision="t" />
+
+  <remove-project name="platform/external/aac" />
+  <project path="external/aac" name="Tomoms/android_external_aac" groups="pdk" remote="github" revision="t" />
+
+  <remove-project name="platform/external/libfuse" />
+  <project path="external/libfuse" name="Tomoms/android_external_libfuse" groups="pdk" remote="github" revision="t" />
+
+  <remove-project name="platform/external/protobuf" />
+  <project path="external/protobuf" name="Tomoms/android_external_protobuf" groups="pdk" remote="github" revision="t" />
+
+  <remove-project name="platform/external/jemalloc_new" />
+  <project path="external/jemalloc_new" name="Tomoms/android_external_jemalloc_new" groups="pdk" remote="github" revision="t" />
+
+  <remove-project name="platform/external/arm-optimized-routines" />
+  <project path="external/arm-optimized-routines" name="Tomoms/android_external_arm-optimized-routines" groups="pdk" remote="github" revision="t" />
+
+  <remove-project name="platform/system/linkerconfig" />
+  <project path="system/linkerconfig" name="Tomoms/android_system_linkerconfig" groups="pdk" remote="github" revision="t" />
+
+  <remove-project name="LineageOS/android_system_update_engine" />
+  <project path="system/update_engine" name="Tomoms/android_system_update_engine" groups="pdk" remote="github" revision="t" />
+
+  <remove-project name="LineageOS/android_packages_modules_Bluetooth" />
+  <project path="packages/modules/Bluetooth" name="Tomoms/android_packages_modules_Bluetooth" groups="pdk" remote="github" revision="t" />
+
+  <remove-project name="platform/frameworks/libs/net" />
+  <project path="frameworks/libs/net" name="Tomoms/android_frameworks_libs_net" groups="pdk-cw-fs,pdk-fs" remote="github" revision="t" />
+
+  <remove-project name="LineageOS/android_packages_apps_Trebuchet" />
+  <project path="packages/apps/Trebuchet" name="Tomoms/android_packages_apps_Trebuchet" remote="github" revision="t" />
+
+  <remove-project name="platform/external/libjpeg-turbo" />
+  <project path="external/libjpeg-turbo" name="Tomoms/android_external_libjpeg-turbo" groups="pdk" remote="github" revision="t" />
+
+  <remove-project name="LineageOS/android_lineage-sdk" />
+  <project path="lineage-sdk" name="Tomoms/android_lineage-sdk" remote="github" revision="t" />
+  <!-- END my forks -->
+
+  <!-- BEGIN third-party repos -->
+  <project name="GrapheneOS/platform_packages_apps_GmsCompat" path="packages/apps/GmsCompat" remote="github" revision="13" clone-depth="1" />
+  <project name="GrapheneOS/platform_external_Apps" path="external/Apps" remote="github" revision="13" clone-depth="1" />
+  <project name="GrapheneOS/platform_external_GmsCompatConfig" path="external/GmsCompatConfig" remote="github" revision="13" clone-depth="1" />
+  <project path="packages/apps/F-DroidPrivilegedExtension" name="fdroid/privileged-extension" remote="gitlab" revision="refs/tags/0.2.13" clone-depth="1" />
+  <remove-project name="platform/prebuilts/clang/host/linux-x86" />
+  <project path="prebuilts/clang/host/linux-x86" name="yaosp/prebuilts_clang_host_linux-x86" remote="gitlab" revision="master" clone-depth="1" />
+  <remove-project name="platform/prebuilts/rust" />
+  <project path="prebuilts/rust" name="yaosp/prebuilts_rust" remote="gitlab" revision="thirteen" clone-depth="1" />
+  <remove-project name="platform/prebuilts/r8" />
+  <project path="prebuilts/r8" name="BenzoRom/prebuilts_r8" remote="github" revision="android13" clone-depth="1" />
+  <project path="external/themelib" name="crdroidandroid/android_external_themelib" remote="github" revision="13.0" clone-depth="1" />
+  <project path="external/colorkt" name="crdroidandroid/android_external_colorkt" remote="github" revision="13.0" clone-depth="1" />
+  <project path="external/chromium-webview" name="divested-mobile/mulch" groups="pdk" remote="gitlab" revision="master" clone-depth="1" />
+  <!-- END third-party repos -->
+
+  <!-- BEGIN useless repos -->
+  <remove-project name="platform/prebuilts/bazel/darwin-x86_64" />
+  <remove-project name="platform/prebuilts/clang/host/darwin-x86" />
+  <remove-project name="platform/prebuilts/go/darwin-x86" />
+  <remove-project name="platform/prebuilts/qemu-kernel" />
+  <remove-project name="platform/prebuilts/android-emulator" />
+  <remove-project name="LineageOS/android_device_generic_common" />
+  <remove-project name="LineageOS/contributors-cloud-generator" />
+  <remove-project name="LineageOS/cm_crowdin" />
+  <remove-project name="LineageOS/hudson" />
+  <remove-project name="LineageOS/charter" />
+  <remove-project name="LineageOS/mirror" />
+  <remove-project name="LineageOS/scripts" />
+  <remove-project name="LineageOS/www" />
+  <remove-project name="LineageOS/lineage_wiki" />
+  <remove-project name="kernel/prebuilts/4.19/arm64" />
+  <remove-project name="kernel/prebuilts/5.4/arm64" />
+  <remove-project name="kernel/prebuilts/5.4/x86-64" />
+  <!--remove-project name="kernel/prebuilts/5.10/arm64" /-->
+  <remove-project name="kernel/prebuilts/5.10/x86-64" />
+  <remove-project name="kernel/prebuilts/5.15/arm64" />
+  <remove-project name="kernel/prebuilts/5.15/x86-64" />
+  <remove-project name="kernel/prebuilts/mainline/arm64" />
+  <remove-project name="kernel/prebuilts/mainline/x86-64" />
+  <remove-project name="kernel/prebuilts/common-modules/virtual-device/4.19/arm64" />
+  <remove-project name="kernel/prebuilts/common-modules/virtual-device/4.19/x86-64" />
+  <!--remove-project name="kernel/prebuilts/common-modules/virtual-device/5.10/arm64" /-->
+  <remove-project name="kernel/prebuilts/common-modules/virtual-device/5.10/x86-64" />
+  <remove-project name="kernel/prebuilts/common-modules/virtual-device/5.15/arm64" />
+  <remove-project name="kernel/prebuilts/common-modules/virtual-device/5.15/x86-64" />
+  <remove-project name="kernel/prebuilts/common-modules/virtual-device/5.4/arm64" />
+  <remove-project name="kernel/prebuilts/common-modules/virtual-device/5.4/x86-64" />
+  <remove-project name="kernel/prebuilts/common-modules/virtual-device/mainline/arm64" />
+  <remove-project name="LineageOS/android_external_chromium-webview_patches" />
+  <remove-project name="LineageOS/android_external_chromium-webview_prebuilt_arm" />
+  <remove-project name="LineageOS/android_external_chromium-webview_prebuilt_arm64" />
+  <remove-project name="LineageOS/android_external_chromium-webview_prebuilt_x86" />
+  <remove-project name="platform/prebuilts/remoteexecution-client" />
+  <!-- END useless repos -->
+  
+</manifest>
